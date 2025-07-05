@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Space+Grotesk&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+   <header>
+    <h1>C O N T E N T</h1>
+    <nav>
+      <a href="index.html#about">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <main>
+    <section id="gallery" class="gallery">
+      <h2>Gallery</h2>
+      <div class="masonry-grid">
+        <img src="photos/photo2.jpg" alt="Photo 2" />
+      <img src="photos/photo3.jpg" alt="Photo 3" />
+<img src="photos/photo4.jpg" alt="Photo 4" />
+<img src="photos/photo5.jpg" alt="Photo 5" />
+<img src="photos/photo6.jpg" alt="Photo 6" />
+<img src="photos/photo14.jpg" alt="Photo 14" />
+<img src="photos/photo7.jpg" alt="Photo 7" />
+<img src="photos/photo8.jpg" alt="Photo 8" />
+<img src="photos/photo9.jpg" alt="Photo 9" />
+<img src="photos/photo10.jpg" alt="Photo 10" />
+<img src="photos/photo11.jpg" alt="Photo 11" />
+<img src="photos/photo12.jpg" alt="Photo 12" />
+<img src="photos/photo13.jpg" alt="Photo 13" />
+
+<img src="photos/photo15.jpg" alt="Photo 15" />
+<img src="photos/photo16.jpg" alt="Photo 16" />
+<img src="photos/photo17.jpg" alt="Photo 17" />
+        <!-- Add more images as needed -->
+      </div>
+    </section>
+  </main>
+
+<!-- Lightbox Script -->
+<script>
+  document.querySelectorAll('.masonry-grid img').forEach(img => {
+    img.addEventListener('click', () => {
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100vw';
+      overlay.style.height = '100vh';
+      overlay.style.background = 'rgba(0, 0, 0, 0.9)';
+      overlay.style.display = 'flex';
+      overlay.style.alignItems = 'center';
+      overlay.style.justifyContent = 'center';
+      overlay.style.zIndex = '9999';
+
+      const fullscreenImg = document.createElement('img');
+      fullscreenImg.src = img.src;
+      fullscreenImg.style.maxWidth = '90vw';
+      fullscreenImg.style.maxHeight = '90vh';
+      fullscreenImg.style.borderRadius = '8px';
+      fullscreenImg.style.boxShadow = '0 0 20px rgba(255,255,255,0.2)';
+
+      overlay.appendChild(fullscreenImg);
+
+      overlay.addEventListener('click', () => {
+        document.body.removeChild(overlay);
+      });
+
+      document.body.appendChild(overlay);
+    });
+  });
+</script>
+
+
+
+</body>
+</html>
